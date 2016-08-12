@@ -4,6 +4,27 @@
  *
  * @package minim
  */
+ 
+function minim_sanitize_hex_color( $hex_color, $setting ) {
+	// Sanitize $input as a hex value without the hash prefix.
+	$hex_color = sanitize_hex_color( $hex_color );
+	
+	// If $input is a valid hex value, return it; otherwise, return the default.
+	return ( ! null( $hex_color ) ? $hex_color : $setting->default );
+}
+
+
+function minim_sanitize_choices( $input, $setting ) {
+    global $wp_customize;
+ 
+    $control = $wp_customize->get_control( $setting->id );
+ 
+    if ( array_key_exists( $input, $control->choices ) ) {
+        return $input;
+    } else {
+        return $setting->default;
+    }
+}
 
 function minim_customize_register( $wp_customize ) {
 	
@@ -16,7 +37,8 @@ function minim_customize_register( $wp_customize ) {
         
         $wp_customize->add_setting( 'layout_setting', array(
         'default' => 'content-sidebar',
-        'transport'=> 'refresh'
+        'transport'=> 'refresh',
+        'sanitize_callback' => 'minim_sanitize_choices',
     	));
     
 
@@ -30,6 +52,7 @@ function minim_customize_register( $wp_customize ) {
             'content-sidebar' => 'Content Sidebar',
             'sidebar-content' => 'Sidebar Content',
             'full-width' => 'Full Width',
+        
         ),
     )
 );
@@ -39,7 +62,8 @@ function minim_customize_register( $wp_customize ) {
 	/*Link Color */
 	$wp_customize->add_setting( 'link_color_setting', array(
         'default' => '#9D81A5',
-        'transport'=> 'refresh'
+        'transport'=> 'refresh',
+        'sanitize_callback' => 'minim_sanitize_hex_color',
     	));
     	
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
@@ -53,7 +77,8 @@ function minim_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'link_color_hover_setting', array(
         'default' => '#d1bcd6',
-        'transport'=> 'refresh'
+        'transport'=> 'refresh',
+        'sanitize_callback' => 'minim_sanitize_hex_color',
     	));
     	
    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color_hover', array(
