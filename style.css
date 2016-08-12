@@ -1,6 +1,6 @@
 /*!
 Theme Name: minim
-Theme URI: http://underscores.me/
+Theme URI: http://www.katherineelsken.com/minim
 Author: Katherine Elsken
 Author URI: http://www.katherineelsken.com
 Description: A minimal and free Wordpress theme for your blog
@@ -8,7 +8,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: minim
-Tags:
+Tags: two-columns, left-sidebar, custom-background, custom-colors, custom-header, custom-menu,featured-images, sticky-post, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1319,27 +1319,17 @@ object {
   .site-content,
   .wrap,
   .content-area,
-  .full-width-content-area,
   .hentry,
   .sidebar-content .content-area,
   .sidebar-content .site-content .widget-area,
   .site-content .widget-area,
   .footer-widgets-1,
   .footer-widgets-2,
-  .footer-widgets-3
-  {
-    width: 99%;
+  .footer-widgets-3 {
+    width: 100%;
     margin: 0px 0px;
+    padding: 0px 0px;
   }
-  
-  .home-widget-2{
-   padding-left:15px;
-   padding-right:15px;
-  }
-  
- img{
-   overflow:hidden;
- }
 
   .footer-widgets-1,
   .footer-widgets-2,
