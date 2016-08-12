@@ -1,0 +1,221 @@
+/*!
+Theme Name: minim
+Theme URI: http://underscores.me/
+Author: Katherine Elsken
+Author URI: http://www.katherineelsken.com
+Description: A minimal and free Wordpress theme for your blog
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: minim
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+minim is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Site Header
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	##Layout
+	## Posts and pages
+	##Footer
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+# Soliloquy Slider
+# Media Queries
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@font-face {
+  font-family: 'Butler Ultra Light';
+  src: url('fonts/Butler_Light.otf');
+}
+
+@font-face {
+  font-family: 'Butler Light';
+  src: url('fonts/Butler_Ultra_Light.otf');
+}
+
+@font-face {
+  font-family: 'Butler Regular';
+  src: url('fonts/Butler_Regular.otf');
+}
+
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+# Site Header
+--------------------------------------------------------------*/
+.site-header{
+	margin-top:30px;
+}
+.site-title {
+	text-align:center;
+	text-transform:uppercase;
+	@include center-block;
+	img {
+			width:217px;
+			height:auto;
+	}
+	
+	a{
+		color:#4A4A4A;
+		font-family:'Butler Light';
+		text-decoration:none;
+		font-size: 45.15px;
+		letter-spacing: 12.75px;
+		&:visited {
+			color:#4A4A4A;
+		}
+	}
+ 
+	
+}
+
+.site-description{
+	display:none;
+}
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "navigation/navigation";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "modules/accessibility";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "modules/alignments";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "modules/clearings";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "site/secondary/widgets";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "site/site";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+@import "modules/infinite-scroll";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "media/media";
+
+
+
+/*--------------------------------------------------------------
+# Soliloquy Slider
+--------------------------------------------------------------*/
+
+.soliloquy-container .soliloquy-caption {
+	position: absolute;
+	bottom: 150px !important;
+	left:0;
+	right:0;
+	width:50% !important;
+	padding:20px;
+	margin: 0 auto !important;
+	z-index: 1120;
+	background: rgba(61,63,71,0.5);
+	text-shadow:none !important;
+	font-size:39px;
+	
+}
+
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+
+@media screen and (max-width:1200px){
+	.content-area{
+		width:600px;
+	}
+	
+	.sidebar-content{
+		.content-area{
+			width:500px;
+		}
+	}
+}
+
+@media screen and(max-width:1024px){
+		.site-content,
+		.wrap,
+		.content-area,
+		.hentry,
+		.sidebar-content .content-area,
+		.sidebar-content .site-content .widget-area,
+		.site-content .widget-area,
+		.footer-widgets-1,
+		.footer-widgets-2,
+		.footer-widgets-3,{
+			width:100%;
+			margin:0px 0px;
+			padding: 0px 0px;
+		}
+		
+		.footer-widgets-1,
+		.footer-widgets-2,
+		.footer-widgets-3{
+			margin-bottom:30px;
+		}
+		
+}
+

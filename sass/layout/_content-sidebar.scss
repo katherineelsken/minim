@@ -1,0 +1,49 @@
+.content-area {
+	float: left;
+	//margin: 0 (-$size__site-sidebar) 0 0;
+	width: 800px;
+}
+
+.full-width-content-area{
+		@include center-block;
+		width:percentage(9/12);
+}
+
+.site-content {
+	margin-top:75px;
+}
+
+.site-content .widget-area {
+	float: right;
+	overflow: hidden;
+	width: 320px;
+}
+
+.site-footer {
+	clear: both;
+	width: $size__site-main;
+}
+
+/*Customizer layout options */
+.sidebar-content {
+	.site-content .widget-area{
+		float:left;
+		width:320px;
+	}
+	.content-area {
+		float:right;
+		width:700px;
+	}
+}
+
+.full-width{
+	.content-area{
+		@include center-block;
+		width:percentage(9/12);
+		float:none;
+	}
+	.site-content .widget-area{
+		display:none;
+	}
+}
+
