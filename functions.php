@@ -224,11 +224,6 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Customizer Custom Controls.
- */
-require get_template_directory() . '/inc/custom-controls.php';
-
-/**
  * Customizer CSS output.
  */
 require get_template_directory() . '/inc/output.php';
